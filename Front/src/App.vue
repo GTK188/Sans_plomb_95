@@ -1,7 +1,8 @@
 <script setup>
+  import GameVue from './components/Game.vue';
   import {ref, watch} from 'vue';
 
-  let url = ref(window.location.pathname);
+  const url = ref(window.location.pathname);
 
   watch(url, (path) => {
 
@@ -34,8 +35,8 @@
 
   <main v-if="url == '/'">
   </main>
-  <main v-else-if="url == '/play'">
-    Game
+  <main v-else-if="url.startsWith('/play')">
+    <GameVue />
   </main>
   <main v-else-if="url == '/infos'">
   </main>
