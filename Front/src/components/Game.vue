@@ -28,63 +28,63 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
 
-    .flexGame{
-        display:flex;
-        justify-content: center;
+    .flexGame {
+      display: flex;
+      justify-content: center;
+
+
+    section, nav {
+      font-size: 1em;
+      border-radius: 2em;
+      background-color: var(--game);
+      color: var(--gft);
+      padding: 2em;
+      margin: 1em;
     }
 
-
-    section, nav{
-        font-size: 1em;
-        border-radius: 2em;
-        background-color: var(--game);
-        color: var(--gft);
-        padding: 2em;
-        margin: 1em;
+    section {
+      width: 50%;
+      height: 80vh;
     }
 
-    section{
-        width: 50%;
-        height: 80vh;
-    }
-
-    nav{
+    nav {
       width: 25%;
     }
-    nav h1{
+
+    nav h1 {
       font-size: 1.2em;
       text-align: center;
     }
 
 
-    #invitelink{
-        width: 100%;
-        height: 5em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    #invitelink {
+      width: 100%;
+      height: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    #invitelink button{
-        cursor: pointer;
-        position: relative;
-        color: inherit;
-        padding: 0.15em;
-        border: 0.3em solid var(--important);
-        border-radius: 0.2em;
-        background: none;
-        animation: 0.5s ease-in infinite alternate important-scale-change;
+    #invitelink button {
+      cursor: pointer;
+      position: relative;
+      color: inherit;
+      padding: 0.15em;
+      border: 0.3em solid var(--important);
+      border-radius: 0.2em;
+      background: none;
+      animation: 0.5s ease-in infinite alternate important-scale-change;
     }
 
 
-    #invitelink button:hover{
+    #invitelink button:hover {
       transition: 0.5s ease;
       background-color: var(--important);
     }
 
-    #invitelink button:after{
+    #invitelink button:after {
       position: absolute;
       content: 'Lien copié!';
       display: block;
@@ -98,18 +98,20 @@
 
     }
 
-    #invitelink button.copiedInvite:after{
+    #invitelink button.copiedInvite:after {
       transition: 0.5s ease;
       transform: translate(-50%, 70%) scale(1);
     }
 
-    .copiedInvite{
-
-    }
-    .copiedInvite:after{
+    .copiedInvite {
 
     }
 
+    .copiedInvite:after {
+
+    }
+
+    }
 
     @keyframes important-scale-change{
         0%{
