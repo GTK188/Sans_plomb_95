@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from "vue";
+import Game from "@/components/Game.vue";
 
 let url = ref(window.location.pathname);
 
@@ -29,7 +30,7 @@ function onHeaderClick(event) {
     </header>
 
     <main v-if="url == '/'"></main>
-    <main v-else-if="url == '/play'">Game</main>
+    <main v-else-if="url.startsWith('/play')"><Game /></main>
     <main v-else-if="url == '/infos'"></main>
     <main v-else></main>
   </div>
