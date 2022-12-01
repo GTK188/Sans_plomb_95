@@ -1,15 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 :root{
   --d-important: #233E7B;
-  --d-ft: #0E1139;
+  --d-ft: #fff;
+  --d-game: #0E1139;;
+  --d-gft: #fff;
+  --d-bg: #21306C;
 
 
+  --bg: var(--d-bg);
   --important: var(--d-important);
   --ft: var(--d-ft);
+  --game: var(--d-game);
+  --gft: var(--d-gft);
+
+  font-size: min(2vw, 7px) ;
 }
 
 body{
-  background-color: #00d;
+  background: var(--bg);
   margin: 0;
-  font-size: 2vw;
-  font-size: Roboto;
+  font-size: 2rem;
+  font-family: Roboto;
+}
+
+a, button, input{
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: inherit;
+  background-color: unset;
 }
