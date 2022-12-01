@@ -28,6 +28,7 @@ a, button, input{
   color: inherit;
   border: inherit;
   background-color: unset;
+}
 :root{
   --d-important: #233E7B;
   --d-ft: #0E1139;
