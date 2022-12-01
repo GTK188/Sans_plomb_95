@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('tests', TestController::class);
+
+Route::group(['middleware' => ['cors']], function ($router) {
+    Route::resource('tests', TestController::class);
+});

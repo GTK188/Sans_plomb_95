@@ -28,4 +28,18 @@ a, button, input{
   color: inherit;
   border: inherit;
   background-color: unset;
+:root{
+  --d-important: #233E7B;
+  --d-ft: #0E1139;
+
+
+  --important: var(--d-important);
+  --ft: var(--d-ft);
+}
+
+body{
+  background-color: #00d;
+  margin: 0;
+  font-size: 2vw;
+  font-size: Roboto;
 }

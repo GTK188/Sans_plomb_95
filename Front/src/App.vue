@@ -18,9 +18,6 @@
     if (!event.target.href) return;
     url.value = event.target.href;
   }
-
-
-
 </script>
 
 <template>
@@ -67,5 +64,4 @@
     transition: 0.5s ease-out;
     background-color: rgba(255,255,255,0.2);
   }
-
 </style>

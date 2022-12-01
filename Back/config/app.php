@@ -173,7 +173,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
+        FruitCake\Cors\CorsServiceProvider::class,
     ],
 
     /*
