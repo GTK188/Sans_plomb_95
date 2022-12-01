@@ -1,64 +1,71 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+import { ref, watch } from "vue";
+
+let url = ref(window.location.pathname);
+
+watch(url, (path) => {
+  window.history.pushState("", "", path);
+});
+
+/**
+ *
+ * @param {Event} event
+ */
+function onHeaderClick(event) {
+  event.preventDefault();
+  if (!event.target.href) return;
+  url.value = event.target.href;
+}
 </script>
 
 <template>
-  <div id="app">
+  <div>
     <header>
-      <img
-        alt="Vue logo"
-        class="logo"
-        src="./assets/logo.svg"
-        width="125"
-        height="125"
-      />
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-      </div>
+      <a href="" @click="onHeaderClick">
+        <img src="" alt="Logo MSTere" />
+      </a>
+      <a href="/play" @click="onHeaderClick">Jouer</a>
+      <a href="/infos" @click="onHeaderClick">Informations</a>
     </header>
 
-    <main>
-      <TheWelcome />
-    </main>
+    <main v-if="url == '/'"></main>
+    <main v-else-if="url == '/play'">Game</main>
+    <main v-else-if="url == '/infos'"></main>
+    <main v-else></main>
   </div>
 </template>
 
 <script>
 export default {
   created() {
-    this.$echo.private("testchannel").listen("Test", (e) => {
+    console.log(window.Echo);
+    /*
+    window.Echo.private("testchannel").listen("Test", (e) => {
       console.log("test successful " + e);
     });
+    */
   },
 };
 </script>
 <style scoped>
 header {
-  line-height: 1.5;
+  width: 100%;
+  font-size: 2em;
+  background-color: var(--important);
+  color: var(--ft);
+  display: flex;
+  align-items: stretch;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header a {
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+header a:hover {
+  transition: 0.5s ease-out;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 </style>
