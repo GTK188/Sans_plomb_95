@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
+use App\Events\Test;
 
 class TestController extends Controller
 {
@@ -13,6 +17,7 @@ class TestController extends Controller
      */
     public function index()
     {
+        event(new Test());
         return ["test" => 200];
     }
 
