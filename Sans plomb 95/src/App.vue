@@ -1,8 +1,7 @@
 <script setup>
-  import GameVue from './components/Game.vue';
   import {ref, watch} from 'vue';
 
-  const url = ref(window.location.pathname);
+  let url = ref(window.location.pathname);
 
   watch(url, (path) => {
 
@@ -18,10 +17,13 @@
     if (!event.target.href) return;
     url.value = event.target.href;
   }
+
+
+
 </script>
 
 <template>
-  <div>
+  
   <header>
     <a href="" @click="onHeaderClick" >
       <img src="" alt="Logo MSTere">
@@ -32,14 +34,13 @@
 
   <main v-if="url == '/'">
   </main>
-  <main v-else-if="url.startsWith('/play')">
-    <GameVue />
+  <main v-else-if="url == '/play'">
+    Game
   </main>
   <main v-else-if="url == '/infos'">
   </main>
   <main v-else>
   </main>
-</div>
 
 </template>
 
@@ -64,4 +65,5 @@
     transition: 0.5s ease-out;
     background-color: rgba(255,255,255,0.2);
   }
+
 </style>
