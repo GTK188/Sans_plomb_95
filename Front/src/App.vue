@@ -28,12 +28,9 @@ import TheWelcome from "./components/TheWelcome.vue";
 <script>
 export default {
   created() {
-    console.log(window.Echo);
-    /*
-    window.Echo.private("testchannel").listen("Test", (e) => {
+    this.$echo.private("testchannel").listen("Test", (e) => {
       console.log("test successful " + e);
     });
-    */
   },
 };
 </script>
