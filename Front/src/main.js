@@ -11,8 +11,8 @@ Vue.prototype.$pusher = new Pusher("websocketkey");
 Vue.prototype.$echo = new Echo({
   broadcaster: "pusher",
   key: "websocketkey",
-  wsHost: "127.0.0.1",
-  authEndpoint: "http://127.0.0.1:6001/broadcasting/auth",
+  wsHost: "127.0.0.1:6001",
+  authEndpoint: "/broadcasting/auth",
   encrypted: true,
   forceTLS: false,
   wsPort: 6001,
