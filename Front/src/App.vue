@@ -38,10 +38,12 @@ function onHeaderClick(event) {
 <script>
 export default {
   created() {
-    console.log("res");
+    console.log(this.$echo);
     this.$echo.private("testchannel").listen("Test", (e) => {
       console.log("test successful " + e);
     });
+
+    console.log("res");
   },
 };
 </script>
