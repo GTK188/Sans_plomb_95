@@ -2,7 +2,7 @@
   <div>
     <header>
       <a href="">
-        <img src="" alt="Logo MSTere" />
+        <img src="/images/logo.png" alt="Logo MSTere" id="hlogo"/>
       </a>
       <router-link to="/play">Jouer</router-link>
       <router-link to="/infos">Informations</router-link>
@@ -13,9 +13,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
 <style scoped>
 header {
   width: 100%;
@@ -36,5 +33,8 @@ header a {
 header a:hover {
   transition: 0.5s ease-out;
   background-color: rgba(255, 255, 255, 0.2);
+}
+#hlogo{
+  height: 2em;
 }
 </style>
