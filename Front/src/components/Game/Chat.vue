@@ -3,6 +3,8 @@
   import Message from "./Message.vue";
   let currentMsg = ref('');
 
+  let props = defineProps(['id, changeid']);
+
   let chatMsg = ref([{
     author: "TestUser",
     message: "Hello World",

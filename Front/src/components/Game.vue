@@ -1,7 +1,9 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, defineProps } from 'vue';
     import ChatVue from './Game/Chat.vue';
-    
+
+    const props = defineProps(['id', 'changeid']);
+
     const gameStarted = ref(false);
 
     const copiedClass = ref("");
@@ -17,7 +19,7 @@
 <template>
     <div class="flexGame">
         <section name="game">
-            <ChatVue />
+            <ChatVue :id="props.id" :changeid="props.changeid" />
         </section>
         <nav>
             <h1>La partie n'a pas commencé</h1>
