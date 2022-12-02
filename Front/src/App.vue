@@ -1,38 +1,16 @@
-<script setup>
-import { ref, watch } from "vue";
-import Game from "@/components/Game.vue";
-
-let url = ref(window.location.pathname);
-
-watch(url, (path) => {
-  window.history.pushState("", "", path);
-});
-
-/**
- *
- * @param {Event} event
- */
-function onHeaderClick(event) {
-  event.preventDefault();
-  if (!event.target.href) return;
-  url.value = event.target.href;
-}
-</script>
-
 <template>
   <div>
     <header>
-      <a href="" @click="onHeaderClick">
+      <a href="">
         <img src="" alt="Logo MSTere" />
       </a>
-      <a href="/play" @click="onHeaderClick">Jouer</a>
-      <a href="/infos" @click="onHeaderClick">Informations</a>
+      <a href="/play">Jouer</a>
+      <a href="/infos">Informations</a>
     </header>
 
-    <main v-if="url == '/'"></main>
-    <main v-else-if="url.startsWith('/play')"><Game /></main>
-    <main v-else-if="url == '/infos'"></main>
-    <main v-else></main>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
