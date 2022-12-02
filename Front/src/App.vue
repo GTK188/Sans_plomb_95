@@ -4,10 +4,9 @@
       <a href="">
         <img src="" alt="Logo MSTere" />
       </a>
-      <a href="/play">Jouer</a>
-      <a href="/infos">Informations</a>
+      <router-link to="/play">Jouer</router-link>
+      <router-link to="/infos">Informations</router-link>
     </header>
-
     <div>
       <router-view></router-view>
     </div>
@@ -15,16 +14,7 @@
 </template>
 
 <script>
-export default {
-  created() {
-    console.log(this.$echo);
-    this.$echo.private("testchannel").listen("Test", (e) => {
-      console.log("test successful " + e);
-    });
-
-    console.log("res");
-  },
-};
+export default {};
 </script>
 <style scoped>
 header {
