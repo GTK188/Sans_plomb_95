@@ -4,9 +4,10 @@
       <a href="">
         <img src="/images/logo.png" alt="Logo MSTere" id="hlogo"/>
       </a>
-      <router-link to="/play">Jouer</router-link>
-      <router-link to="/infos">Informations</router-link>
+      <a href="/play">Jouer</a>
+      <a href="/infos">Informations</a>
     </header>
+
     <div>
       <router-view></router-view>
     </div>
